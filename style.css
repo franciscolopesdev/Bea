@@ -1,0 +1,169 @@
+/* Fundo com Gradiente Animado */
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Monsieur+La+Doulaise&display=swap');
+
+
+body {
+    font-family: "Imperial Script", cursive;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    color: #333;
+    text-align: center;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Cabeçalho com Animação */
+header {
+    
+    background-color: rgba(255, 182, 193, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeIn 2s ease-out;
+}
+
+header h1 {
+    font-family: "Monsieur La Doulaise", cursive;
+    color: #000000;
+    font-weight: 400;
+    font-size: 50px;
+    margin: 0;
+}
+
+header p {
+    font-size: 25px;
+    color: #ff6b81;
+    margin-top: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Linha do Tempo com Efeito de Sombra e Hover */
+#linha-do-tempo .evento {
+    background-color: #ffe6f0;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 15px;
+    display: inline-block;
+    width: 250px;
+    text-align: center;
+    font-size: 25px;
+    animation: slideIn 1s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#linha-do-tempo .evento:hover {
+    transform: translateY(-10px); /* Sobe ligeiramente ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+#linha-do-tempo .evento img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Título da Galeria */
+#galeria h2 {
+    font-size: 36px;
+    color: #ff4b5c;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px #ffccd5;
+}
+
+/* Layout em grade para a galeria */
+#galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo das fotos na galeria */
+#galeria .foto {
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#galeria .foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de zoom e sombra ao passar o mouse */
+#galeria .foto:hover {
+    transform: translateY(-5px); /* A foto "sobe" ligeiramente */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+#galeria .foto img:hover {
+    transform: scale(1.1); /* Zoom na imagem ao passar o mouse */
+}
+
+
+/* Contador de Dias com Animação */
+#contador {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #ffe6f0;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    animation: pulse 2s infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contador:hover {
+    transform: translateY(-10px); /* Sobe ligeiramente ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+#contador h2 {
+    color: #ff6b81;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#dias-juntos {
+    font-size: 32px;
+    color: #ff4b5c;
+    font-weight: bold;
+    text-shadow: 2px 2px #ffccd5;
+    animation: heartbeat 1s infinite alternate;
+}
+
+
+@keyframes pulse {
+    0% { box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+    50% { box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); }
+    100% { box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
